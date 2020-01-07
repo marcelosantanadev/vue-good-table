@@ -8099,7 +8099,6 @@
     },
     computed: {
       hasFilterRow: function hasFilterRow() {
-        console.log('OPAAAAA', this.column);
         return !!(this.column.filterOptions && this.column.filterOptions.enabled);
       }
     },
@@ -8210,7 +8209,7 @@
         domProps: {
           "value": option
         }
-      }, [_vm._v("\n      " + _vm._s(option) + "\n    ")]);
+      }, [_vm._v("\n            " + _vm._s(option) + "\n        ")]);
     })], 2) : _vm._e(), _vm._v(" "), _vm.isDropdownObjects(_vm.column) ? _c('select', {
       staticClass: "vgt-select",
       domProps: {
@@ -8232,7 +8231,7 @@
         domProps: {
           "value": option.value
         }
-      }, [_vm._v(_vm._s(option.text) + "\n    ")]);
+      }, [_vm._v(_vm._s(option.text) + "\n        ")]);
     })], 2) : _vm._e()]) : _c('div', [_c('p', {
       staticStyle: {
         "line-height": "0"
@@ -8246,7 +8245,7 @@
   var __vue_inject_styles__$3 = undefined;
   /* scoped */
 
-  var __vue_scope_id__$3 = "data-v-188e04a6";
+  var __vue_scope_id__$3 = "data-v-1be9fcbd";
   /* module identifier */
 
   var __vue_module_identifier__$3 = undefined;
@@ -8433,12 +8432,11 @@
         return null;
       },
       getHeaderClasses: function getHeaderClasses(column, index) {
-        var classes = lodash_assign({}, this.getClasses(index, 'th'), {
+        return lodash_assign({}, this.getClasses(index, 'th'), {
           sortable: this.isSortableColumn(column),
           'sorting sorting-desc': this.getColumnSort(column) === 'desc',
           'sorting sorting-asc': this.getColumnSort(column) === 'asc'
         });
-        return classes;
       },
       filterRows: function filterRows(columnFilters) {
         this.$emit('filter-changed', columnFilters);
@@ -8539,13 +8537,7 @@
     })]) : _vm._e(), _vm._v(" "), _vm._l(_vm.columns, function (column, index) {
       return !column.hidden ? _c('th', {
         key: index,
-        "class": _vm.getHeaderClasses(column, index),
-        style: _vm.columnStyles[index],
-        on: {
-          "click": function click($event) {
-            return _vm.sort($event, column);
-          }
-        }
+        style: _vm.columnStyles[index]
       }, [_c('vgt-filter-row', {
         attrs: {
           "global-search-enabled": _vm.searchEnabled,
@@ -8558,6 +8550,13 @@
         on: {
           "filter-changed": _vm.filterRows
         }
+      }), _vm._v(" "), _c('div', {
+        "class": _vm.getHeaderClasses(column, index),
+        on: {
+          "click": function click($event) {
+            return _vm.sort($event, column);
+          }
+        }
       })], 1) : _vm._e();
     })], 2)]);
   };
@@ -8568,7 +8567,7 @@
   var __vue_inject_styles__$4 = undefined;
   /* scoped */
 
-  var __vue_scope_id__$4 = "data-v-30eaa9de";
+  var __vue_scope_id__$4 = "data-v-5bb58d25";
   /* module identifier */
 
   var __vue_module_identifier__$4 = undefined;
@@ -8685,7 +8684,7 @@
       domProps: {
         "innerHTML": _vm._s(_vm.headerRow.label)
       }
-    }) : _c('span')], {
+    }) : _c('span', [_vm._v("\n        " + _vm._s(_vm.headerRow.label) + "\n      ")])], {
       "row": _vm.headerRow
     })], 2) : _vm._e(), _vm._v(" "), _vm.headerRow.mode !== 'span' && _vm.lineNumbers ? _c('th', {
       staticClass: "vgt-row-header"
