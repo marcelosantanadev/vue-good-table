@@ -71,23 +71,23 @@
         >
           <!-- Table header -->
           <thead
-            is="vgt-table-header"
-            ref="table-header-secondary"
-            @on-toggle-select-all="toggleSelectAll"
-            @on-sort-change="changeSort"
-            @filter-changed="filterRows"
-            :columns="columns"
-            :line-numbers="lineNumbers"
-            :selectable="selectable"
-            :all-selected="allSelected"
-            :all-selected-indeterminate="allSelectedIndeterminate"
-            :mode="mode"
-            :sortable="sortable"
-            :typed-columns="typedColumns"
-            :getClasses="getClasses"
-            :searchEnabled="searchEnabled"
-            :paginated="paginated"
-            :table-ref="$refs.table"
+                  is="vgt-table-header"
+                  ref="table-header-secondary"
+                  @on-toggle-select-all="toggleSelectAll"
+                  @on-sort-change="changeSort"
+                  @filter-changed="filterRows"
+                  :columns="columns"
+                  :line-numbers="lineNumbers"
+                  :selectable="selectable"
+                  :all-selected="allSelected"
+                  :all-selected-indeterminate="allSelectedIndeterminate"
+                  :mode="mode"
+                  :sortable="sortable"
+                  :typed-columns="typedColumns"
+                  :getClasses="getClasses"
+                  :searchEnabled="searchEnabled"
+                  :paginated="paginated"
+                  :table-ref="$refs.table"
           >
             <template
               slot="table-column"
@@ -105,12 +105,10 @@
       </div>
       <div
         :class="{'vgt-responsive': responsive}"
-        :style="wrapperStyles"
-      >
+        :style="wrapperStyles">
         <table
           ref="table"
-          :class="tableStyleClasses"
-        >
+          :class="tableStyleClasses">
           <!-- Table header -->
           <thead
             is="vgt-table-header"
@@ -299,22 +297,20 @@
 </template>
 
 <script>
-import each from 'lodash.foreach';
-import assign from 'lodash.assign';
-import cloneDeep from 'lodash.clonedeep';
-import filter from 'lodash.filter';
-import isEqual from 'lodash.isequal';
-import diacriticless from 'diacriticless';
-import defaultType from './types/default';
-import VgtPagination from './VgtPagination.vue';
-import VgtGlobalSearch from './VgtGlobalSearch.vue';
-import VgtTableHeader from './VgtTableHeader.vue';
-import VgtHeaderRow from './VgtHeaderRow.vue';
+  import each from 'lodash.foreach';
+  import assign from 'lodash.assign';
+  import cloneDeep from 'lodash.clonedeep';
+  import filter from 'lodash.filter';
+  import isEqual from 'lodash.isequal';
+  import defaultType from './types/default';
+  import VgtPagination from './VgtPagination.vue';
+  import VgtGlobalSearch from './VgtGlobalSearch.vue';
+  import VgtTableHeader from './VgtTableHeader.vue';
+  import VgtHeaderRow from './VgtHeaderRow.vue';
+  // here we load each data type module.
+  import * as CoreDataTypes from './types/index';
 
-// here we load each data type module.
-import * as CoreDataTypes from './types/index';
-
-const dataTypes = {};
+  const dataTypes = {};
 const coreDataTypes = CoreDataTypes.default;
 each(Object.keys(coreDataTypes), (key) => {
   const compName = key.replace(/^\.\//, '').replace(/\.js/, '');

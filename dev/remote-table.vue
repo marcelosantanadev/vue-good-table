@@ -4,6 +4,7 @@
     :columns="columns"
     :rows="rows"
     :totalRows="totalRecords"
+    :hide-title="true"
     mode="remote"
     @on-page-change="onPageChange"
     @on-sort-change="onSortChange"

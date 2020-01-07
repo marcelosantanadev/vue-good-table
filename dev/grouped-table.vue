@@ -4,6 +4,7 @@
     :columns="columns"
     :rows="rows"
     :line-numbers="true"
+    :hide-title="true"
     :select-options="{enabled: true}"
     @on-select-all="onSelectAll"
     @on-search="onSelectAll"
