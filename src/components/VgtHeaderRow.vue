@@ -10,7 +10,7 @@
       <span v-if="headerRow.html" v-html="headerRow.label">
       </span>
       <span v-else>
-        <!--{{ headerRow.label }}-->
+        {{ headerRow.label }}
       </span>
     </slot>
   </th>

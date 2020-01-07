@@ -5,34 +5,40 @@ $sort-chevron-width: 5px;
     padding: .75em 1.5em .75em .75em;
     vertical-align: middle;
     position: relative;
-    &.sortable{
-      cursor: pointer;
-      &:after{
-        content: '';
-        position: absolute;
-        height: 0px;
-        width: 0px;
-        right: 6px;
-        top: 50%;
-        margin-top: -7px;
-        border-left: $sort-chevron-width solid transparent;
-        border-right: $sort-chevron-width solid transparent;
-        border-bottom: $sort-chevron-width solid $chevron-color;
-      }
-      &:before{
-        content: '';
-        position: absolute;
-        height: 0px;
-        width: 0px;
-        right: 6px;
-        top: 50%;
-        margin-bottom: -7px;
-        border-left: $sort-chevron-width solid transparent;
-        border-right: $sort-chevron-width solid transparent;
-        border-top: $sort-chevron-width solid $chevron-color;
+
+    & div {
+      &.sortable {
+        cursor: pointer;
+
+        &:after {
+          content: '';
+          position: absolute;
+          height: 0px;
+          width: 0px;
+          right: 6px;
+          top: 50%;
+          margin-top: -7px;
+          border-left: $sort-chevron-width solid transparent;
+          border-right: $sort-chevron-width solid transparent;
+          border-bottom: $sort-chevron-width solid $chevron-color;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          height: 0px;
+          width: 0px;
+          right: 6px;
+          top: 50%;
+          margin-bottom: -7px;
+          border-left: $sort-chevron-width solid transparent;
+          border-right: $sort-chevron-width solid transparent;
+          border-top: $sort-chevron-width solid $chevron-color;
+        }
       }
     }
   }
+
   & th.line-numbers, & th.vgt-checkbox-col {
     padding: 0 .75em 0 .75em;
     color: $text-color;
@@ -61,14 +67,18 @@ $sort-chevron-width: 5px;
     &.vgt-checkbox-col{
       vertical-align: middle;
     }
-    &.sorting-asc{
-      &:after{
-        border-bottom: $sort-chevron-width solid $link-color;
+
+    & div {
+      &.sorting-asc {
+        &:after {
+          border-bottom: $sort-chevron-width solid $link-color;
+        }
       }
-    }
-    &.sorting-desc {
-      &:before{
-        border-top: $sort-chevron-width solid $link-color;
+
+      &.sorting-desc {
+        &:before {
+          border-top: $sort-chevron-width solid $link-color;
+        }
       }
     }
   }

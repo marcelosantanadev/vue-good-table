@@ -9,12 +9,8 @@
                     :indeterminate.prop="allSelectedIndeterminate"
                     @change="toggleSelectAll"/>
         </th>
-        <th v-for="(column, index) in columns"
-            :key="index"
-            @click="sort($event, column)"
-            :class="getHeaderClasses(column, index)"
-            :style="columnStyles[index]"
-            v-if="!column.hidden">
+
+        <th v-for="(column, index) in columns" :key="index" :style="columnStyles[index]" v-if="!column.hidden">
             <vgt-filter-row
                     @filter-changed="filterRows"
                     :global-search-enabled="searchEnabled"
@@ -23,6 +19,8 @@
                     :column="column"
                     :mode="mode"
                     :typed-columns="typedColumns"/>
+
+            <div @click="sort($event, column)" :class="getHeaderClasses(column, index)"></div>
         </th>
     </tr>
     </thead>
@@ -153,12 +151,11 @@
             },
 
             getHeaderClasses(column, index) {
-                const classes = assign({}, this.getClasses(index, 'th'), {
+                return assign({}, this.getClasses(index, 'th'), {
                     sortable: this.isSortableColumn(column),
                     'sorting sorting-desc': this.getColumnSort(column) === 'desc',
                     'sorting sorting-asc': this.getColumnSort(column) === 'asc',
                 });
-                return classes;
             },
 
             filterRows(columnFilters) {
