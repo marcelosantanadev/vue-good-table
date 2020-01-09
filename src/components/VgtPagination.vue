@@ -1,13 +1,13 @@
 <template>
-    <div class="vgt-wrap__footer vgt-clearfix">
+    <div class="vgt-wrap__footer">
 
-        <div class="vgt-pull-left">
+        <div class="">
             <slot name="filter-area">
 
             </slot>
         </div>
 
-        <div class="footer__navigation vgt-pull-right">
+        <div class="footer__navigation">
             <a
                     href="javascript:undefined"
                     class="footer__navigation__page-btn"
