@@ -7803,11 +7803,9 @@
     var _c = _vm._self._c || _h;
 
     return _c('div', {
-      staticClass: "vgt-wrap__footer vgt-clearfix"
-    }, [_c('div', {
-      staticClass: "vgt-pull-left"
-    }, [_vm._t("filter-area")], 2), _vm._v(" "), _c('div', {
-      staticClass: "footer__navigation vgt-pull-right"
+      staticClass: "vgt-wrap__footer"
+    }, [_c('div', {}, [_vm._t("filter-area")], 2), _vm._v(" "), _c('div', {
+      staticClass: "footer__navigation"
     }, [_c('a', {
       staticClass: "footer__navigation__page-btn",
       "class": {
