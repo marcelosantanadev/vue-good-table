@@ -83,15 +83,12 @@
                             :searchEnabled="searchEnabled"
                             :paginated="paginated"
                             :table-ref="$refs.table">
-                    <template
-                            slot="table-column"
-                            slot-scope="props">
-                        <slot
-                                name="table-column"
-                                :column="props.column">
-                            <span>{{props.column.label}}</span>
-                        </slot>
-                    </template>
+
+                        <template slot="table-column" slot-scope="props">
+                            <slot name="table-column" :column="props.column">
+                                <span>{{props.column.label}}</span>
+                            </slot>
+                        </template>
                     </thead>
                 </table>
             </div>
@@ -118,15 +115,11 @@
                             :typed-columns="typedColumns"
                             :getClasses="getClasses"
                             :searchEnabled="searchEnabled">
-                    <template
-                            slot="table-column"
-                            slot-scope="props">
-                        <slot
-                                name="table-column"
-                                :column="props.column">
-                            <span>{{props.column.label}}</span>
-                        </slot>
-                    </template>
+                        <template slot="table-column" slot-scope="props">
+                            <slot name="table-column" :column="props.column">
+                                <span>{{props.column.label}}</span>
+                            </slot>
+                        </template>
                     </thead>
 
                     <!-- Table body starts here -->

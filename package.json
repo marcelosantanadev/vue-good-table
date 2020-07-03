@@ -1,6 +1,6 @@
 {
   "name": "vue-good-table",
-  "version": "2.18.1",
+  "version": "3.18.1",
   "sideEffects": [
     "*.vue",
     "*.css"
@@ -42,8 +42,12 @@
     }
   },
   "dependencies": {
+    "@popperjs/core": "^2.4.4",
+    "bootstrap": "^4.5.0",
+    "bootstrap-vue": "^2.15.0",
     "date-fns": "^2.0.0-beta.4",
     "diacriticless": "1.0.1",
+    "font-awesome": "^4.7.0",
     "lodash.assign": "^4.2.0",
     "lodash.clonedeep": "^4.5.0",
     "lodash.filter": "^4.6.0",

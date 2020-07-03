@@ -72,6 +72,10 @@ export default {
             // filterDropdownItems: ['Chris', 'Dan', 'Susan'],
             // filterValue: 'Chris',
           },
+          tooltipOptions: {
+            enabled: true,
+            label: 'Teste teste teste'
+          }
         },
         {
           label: 'Age',

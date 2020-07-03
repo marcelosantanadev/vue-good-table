@@ -1,5 +1,6 @@
 <template>
-    <div v-if="!column.hidden && hasFilterRow && isFilterable(column)">
+    <div v-if="!column.hidden && hasFilterRow && isFilterable(column)"
+         style="display: flex;align-items: center;justify-content: center;">
         <input v-if="!isDropdown(column)" type="text" class="vgt-input"
                :placeholder="getPlaceholder(column)"
                :value="columnFilters[column.field]"
@@ -30,7 +31,10 @@
                     :value="option.value">{{ option.text }}
             </option>
         </select>
+
+        <i v-if="hasTooltipRow" style="margin-left: 8px;" class="fa fa-question-circle" v-b-tooltip.hover :title="column.tooltipOptions.label"></i>
     </div>
+
     <div v-else>
         <p style="line-height: 0;">{{column.label}}</p>
     </div>
@@ -65,6 +69,9 @@
         computed: {
             hasFilterRow() {
                 return !!(this.column.filterOptions && this.column.filterOptions.enabled);
+            },
+            hasTooltipRow() {
+                return !!(this.column.tooltipOptions && this.column.tooltipOptions.enabled);
             },
         },
         methods: {

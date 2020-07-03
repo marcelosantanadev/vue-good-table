@@ -8079,6 +8079,10 @@
   //
   //
   //
+  //
+  //
+  //
+  //
   var script$3 = {
     name: 'VgtFilterRow',
     props: ['lineNumbers', 'column', 'typedColumns', 'globalSearchEnabled', 'selectable', 'mode'],
@@ -8100,6 +8104,9 @@
     computed: {
       hasFilterRow: function hasFilterRow() {
         return !!(this.column.filterOptions && this.column.filterOptions.enabled);
+      },
+      hasTooltipRow: function hasTooltipRow() {
+        return !!(this.column.tooltipOptions && this.column.tooltipOptions.enabled);
       }
     },
     methods: {
@@ -8167,7 +8174,13 @@
 
     var _c = _vm._self._c || _h;
 
-    return !_vm.column.hidden && _vm.hasFilterRow && _vm.isFilterable(_vm.column) ? _c('div', [!_vm.isDropdown(_vm.column) ? _c('input', {
+    return !_vm.column.hidden && _vm.hasFilterRow && _vm.isFilterable(_vm.column) ? _c('div', {
+      staticStyle: {
+        "display": "flex",
+        "align-items": "center",
+        "justify-content": "center"
+      }
+    }, [!_vm.isDropdown(_vm.column) ? _c('input', {
       staticClass: "vgt-input",
       attrs: {
         "type": "text",
@@ -8232,7 +8245,22 @@
           "value": option.value
         }
       }, [_vm._v(_vm._s(option.text) + "\n        ")]);
-    })], 2) : _vm._e()]) : _c('div', [_c('p', {
+    })], 2) : _vm._e(), _vm._v(" "), _vm.hasTooltipRow ? _c('i', {
+      directives: [{
+        name: "b-tooltip",
+        rawName: "v-b-tooltip.hover",
+        modifiers: {
+          "hover": true
+        }
+      }],
+      staticClass: "fa fa-question-circle",
+      staticStyle: {
+        "margin-left": "8px"
+      },
+      attrs: {
+        "title": _vm.column.tooltipOptions.label
+      }
+    }) : _vm._e()]) : _c('div', [_c('p', {
       staticStyle: {
         "line-height": "0"
       }
@@ -8245,7 +8273,7 @@
   var __vue_inject_styles__$3 = undefined;
   /* scoped */
 
-  var __vue_scope_id__$3 = "data-v-1be9fcbd";
+  var __vue_scope_id__$3 = "data-v-de068fb0";
   /* module identifier */
 
   var __vue_module_identifier__$3 = undefined;
