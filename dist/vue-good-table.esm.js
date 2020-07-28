@@ -14586,7 +14586,9 @@ var __vue_render__$6 = function __vue_render__() {
     "pageChanged": _vm.pageChanged,
     "perPageChanged": _vm.perPageChanged,
     "total": _vm.totalRows || _vm.totalRowCount
-  }) : _vm._e(), _vm._v(" "), _c('div', {
+  }) : _vm._t("pagination-top", [_c('div', {
+    staticClass: "vgt-wrap__footer"
+  }, [_c('div', [_vm._t("filter-area")], 2)])]), _vm._v(" "), _c('div', {
     staticClass: "vgt-inner-wrap",
     "class": {
       'is-loading': _vm.isLoading
