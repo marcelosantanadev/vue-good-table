@@ -7,7 +7,6 @@
         </span>
             </slot>
         </div>
-
         <slot v-if="paginate && paginateOnTop" name="pagination-top" :pageChanged="pageChanged"
               :perPageChanged="perPageChanged" :total="totalRows || totalRowCount">
             <vgt-pagination
@@ -32,7 +31,13 @@
                 </template>
             </vgt-pagination>
         </slot>
-
+        <slot v-else name="pagination-top">
+            <div class="vgt-wrap__footer">
+                <div>
+                    <slot name="filter-area"></slot>
+                </div>
+            </div>
+        </slot>
         <div class="vgt-inner-wrap" :class="{'is-loading': isLoading}">
             <vgt-global-search
                     @on-keyup="searchTableOnKeyUp"
@@ -256,8 +261,9 @@
                     :paginateDropdownAllowAll="paginateDropdownAllowAll"
                     :ofText="ofText"
                     :pageText="pageText"
-                    :allText="allText"
-            ></vgt-pagination>
+                    :allText="allText">
+
+            </vgt-pagination>
         </slot>
     </div>
 </template>
