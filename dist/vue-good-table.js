@@ -7804,7 +7804,9 @@
 
     return _c('div', {
       staticClass: "vgt-wrap__footer"
-    }, [_c('div', {}, [_vm._t("filter-area")], 2), _vm._v(" "), _c('div', {
+    }, [_c('div', {
+      staticClass: "filter-area"
+    }, [_vm._t("filter-area")], 2), _vm._v(" "), _c('div', {
       staticClass: "footer__navigation"
     }, [_c('a', {
       staticClass: "footer__navigation__page-btn",
@@ -14594,7 +14596,9 @@
       "total": _vm.totalRows || _vm.totalRowCount
     }) : _vm._t("pagination-top", [_c('div', {
       staticClass: "vgt-wrap__footer"
-    }, [_c('div', [_vm._t("filter-area")], 2)])]), _vm._v(" "), _c('div', {
+    }, [_c('div', {
+      staticClass: "filter-area"
+    }, [_vm._t("filter-area")], 2)])]), _vm._v(" "), _c('div', {
       staticClass: "vgt-inner-wrap",
       "class": {
         'is-loading': _vm.isLoading

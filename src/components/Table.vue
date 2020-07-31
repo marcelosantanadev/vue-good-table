@@ -33,11 +33,12 @@
         </slot>
         <slot v-else name="pagination-top">
             <div class="vgt-wrap__footer">
-                <div>
+                <div class="filter-area">
                     <slot name="filter-area"></slot>
                 </div>
             </div>
         </slot>
+
         <div class="vgt-inner-wrap" :class="{'is-loading': isLoading}">
             <vgt-global-search
                     @on-keyup="searchTableOnKeyUp"

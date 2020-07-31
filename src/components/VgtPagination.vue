@@ -1,15 +1,14 @@
 <template>
     <div class="vgt-wrap__footer">
 
-        <div class="">
+        <div class="filter-area">
             <slot name="filter-area">
 
             </slot>
         </div>
 
         <div class="footer__navigation">
-            <a
-                    href="javascript:undefined"
+            <a href="javascript:undefined"
                     class="footer__navigation__page-btn"
                     :class="{ disabled: !prevIsPossible }"
                     @click.prevent.stop="previousPage"
